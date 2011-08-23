@@ -17,3 +17,11 @@ server['datastorage'] = dataStorage;
 server['gelf_listener'] = gelf_listener;
 server['debug_port'] = debug_port;
 server['worker'] = worker;
+
+var os = require('os');
+var util = require('util');
+setInterval(function() {
+	console.log("Memory: " + os.freemem()/1024/1024 + '/' + os.totalmem()/1024/1024);
+	console.log('Load: ' + os.loadavg());
+	console.log('Process Memory: ' + util.inspect(process.memoryUsage()));
+}, 5000);
