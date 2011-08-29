@@ -1,0 +1,10 @@
+{
+	"name": "graylog2-server-node.js",
+	"version": "0.0.1",
+	"private": true,
+	"dependencies": {
+		"log4js": "0.3.8",
+		"mongodb": "0.9.6-10",
+		"compress-buffer": "0.3.0"
+	}
+}

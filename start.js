@@ -6,6 +6,9 @@ var ProcessingQueue = require('./lib/processing_queue');
 var Worker = require('./lib/worker');
 var server = {};
 
+var log4js = require('log4js');
+var logger = log4js.getLogger();
+
 dataStorage = new DataStorage(config['db']);
 processingQueue = new ProcessingQueue();
 gelf_listener.start(config['gelf_port'], processingQueue);
@@ -21,7 +24,7 @@ server['worker'] = worker;
 var os = require('os');
 var util = require('util');
 setInterval(function() {
-	console.log("Memory: " + os.freemem()/1024/1024 + '/' + os.totalmem()/1024/1024);
-	console.log('Load: ' + os.loadavg());
-	console.log('Process Memory: ' + util.inspect(process.memoryUsage()));
+	logger.debug("Memory: " + os.freemem()/1024/1024 + '/' + os.totalmem()/1024/1024);
+	logger.debug('Load: ' + os.loadavg());
+	logger.debug('Process Memory: ' + util.inspect(process.memoryUsage()));
 }, 5000);
