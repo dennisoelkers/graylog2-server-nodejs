@@ -1,2 +1,2 @@
-{"name" : "graylog2 node.js server message pcoessing",
+{"name" : "graylog2 node.js server message processing",
  "main" : "./message_processor.js"}
