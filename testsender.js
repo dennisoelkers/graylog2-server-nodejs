@@ -20,12 +20,12 @@ setInterval(function(stats) {
 	console.log("Count: " + stats['count']);
 }, 2000, stats);
 
-setInterval(function(client, stats) {
-while(true) {
+/*setInterval(function(client, stats) {
+while(true) {*/
 	message['created_at'] = new Date().getTime() / 1000;
 	var buf = GELF.encode(message)
 	client.send(buf, 0, buf.length, 12201, 'localhost');
 	stats['count'] += 1;
 	console.log(stats['count']);
-}
-}, 100, client, stats);
+/*}
+}, 100, client, stats);*/
