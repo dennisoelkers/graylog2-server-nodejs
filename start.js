@@ -20,6 +20,7 @@ server['datastorage'] = dataStorage;
 server['gelf_listener'] = gelf_listener;
 server['debug_port'] = debug_port;
 server['worker'] = worker;
+server['server_values'] = new require('./lib/server_values')(dataStorage.db);
 
 var os = require('os');
 var util = require('util');
